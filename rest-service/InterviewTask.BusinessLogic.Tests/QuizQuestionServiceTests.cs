@@ -95,6 +95,23 @@ namespace InterviewTask.BusinessLogic.Tests
             }
         }
 
+        [TestMethod]
+        public void Should_Not_Error_On_Generating_Random_Questions_If_No_Questions_Configured()
+        {
+            // Arrange
+            var randomCounter = new Dictionary<string, int>();
+            var mockQuizQuestionRepository = new Mock<IQuizQuestionRepository>();
+            mockQuizQuestionRepository.Setup(m => m.GetAll()).Returns(new List<QuizQuestion>());
+            var service = new QuizQuestionService(mockQuizQuestionRepository.Object, new Mock<IValidationDictionary>().Object);
+
+            // Act
+            var question = service.GetRandomQuizQuestion();
+
+            // Assert
+            mockQuizQuestionRepository.Verify(m => m.GetAll(), Times.Once);
+            Assert.IsNull(question);
+        }
+
         #region Mock Helpers
 
         public class MockValidationDictionary : IValidationDictionary

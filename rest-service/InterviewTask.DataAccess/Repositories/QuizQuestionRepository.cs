@@ -10,9 +10,17 @@ namespace InterviewTask.DataAccess.Repositories
 {
     public class QuizQuestionRepository : IQuizQuestionRepository
     {
+        private QuizQuestionDbContext Context { get; set; }
+
+        public QuizQuestionRepository()
+        {
+            this.Context = new QuizQuestionDbContext();
+        }
+
         public List<QuizQuestion> GetAll()
         {
-            throw new NotImplementedException();
+            return this.Context.QuizQuestions
+                .ToList();
         }
 
         public void AddQuestion(QuizQuestion question)
@@ -27,7 +35,7 @@ namespace InterviewTask.DataAccess.Repositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            this.Context?.Dispose();
         }
     }
 }

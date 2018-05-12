@@ -25,8 +25,15 @@ namespace InterviewTask.BusinessLogic.Services
         public QuizQuestionViewModel GetRandomQuizQuestion()
         {
             var questions = this.QuizQuestionRepository.GetAll();
-            var randomQuestion = questions[this.RandomGenerator.Next(questions.Count)];
-            return new QuizQuestionViewModel(randomQuestion.Question, randomQuestion.Answer);
+            if (questions.Any())
+            {
+                var randomQuestion = questions[this.RandomGenerator.Next(questions.Count)];
+                return new QuizQuestionViewModel(randomQuestion.Question, randomQuestion.Answer);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public bool AddNewQuizQuestion(QuizQuestionViewModel quizQuestionViewModel)
