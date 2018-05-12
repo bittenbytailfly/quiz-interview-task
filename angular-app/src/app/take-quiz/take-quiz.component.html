@@ -4,6 +4,7 @@
     <span [ngClass]="isAnswerRevealed ? 'show' : ''">{{ question.answer }}</span>
   </p>
   <button id="reveal-answer-button" (click)="revealAnswer()">Reveal Answer</button>
+  <button id="next-question-button" (click)="showRandomQuestion()">Next Question</button>
 </div>
 
 <ng-template #noQuestions>

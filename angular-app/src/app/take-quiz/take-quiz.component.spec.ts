@@ -56,4 +56,20 @@ describe('TakeQuizComponent', () => {
     expect(compiled.querySelector('p.question').textContent).toEqual('Q');
     expect(compiled.querySelector('p.answer span').textContent).toEqual('A');
   });
+
+  it ('should show relevant buttons', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#reveal-answer-button')).toBeTruthy();
+    expect(compiled.querySelector('#next-question-button')).toBeTruthy();
+  });
+
+  it ('should show another random question on clicking of "next question" button', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    spyOn(mockQuestionService, 'getRandomQuestion');
+
+    compiled.querySelector('#next-question-button').click();
+    fixture.detectChanges();
+    
+    expect(mockQuestionService.getRandomQuestion).toHaveBeenCalled();
+  });
 });
