@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTask.BusinessLogic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTask.BusinessLogic.Tests", "InterviewTask.BusinessLogic.Tests\InterviewTask.BusinessLogic.Tests.csproj", "{B2559DD1-2A5D-4191-81AF-1276D08A6815}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTask.DataAccess", "InterviewTask.DataAccess\InterviewTask.DataAccess.csproj", "{5C701AF1-5E6B-4B7A-9B87-0725671FBED8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B2559DD1-2A5D-4191-81AF-1276D08A6815}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2559DD1-2A5D-4191-81AF-1276D08A6815}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2559DD1-2A5D-4191-81AF-1276D08A6815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C701AF1-5E6B-4B7A-9B87-0725671FBED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C701AF1-5E6B-4B7A-9B87-0725671FBED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C701AF1-5E6B-4B7A-9B87-0725671FBED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C701AF1-5E6B-4B7A-9B87-0725671FBED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
