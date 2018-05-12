@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 
 class MockQuestionService {
   addQuestion() : Boolean {
-    console.log('called');
     return true;
   }
 }

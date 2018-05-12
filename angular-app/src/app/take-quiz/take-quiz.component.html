@@ -1,3 +1,13 @@
-<p>
-  take-quiz works!
-</p>
+<div *ngIf="question;else noQuestions">
+  <p class="question">{{ question.question }}</p>
+  <p class="answer">
+    <span [ngClass]="isAnswerRevealed ? 'show' : ''">{{ question.answer }}</span>
+  </p>
+  <button id="reveal-answer-button" (click)="revealAnswer()">Reveal Answer</button>
+</div>
+
+<ng-template #noQuestions>
+  <div class="no-questions">
+    No questions configured
+  </div>
+</ng-template>
