@@ -1,11 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { QuizQuestionService } from './quiz-question.service';
 
 describe('QuizQuestionService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [QuizQuestionService]
+      providers: [QuizQuestionService],
+      imports: [HttpClientModule]
     });
   });
 

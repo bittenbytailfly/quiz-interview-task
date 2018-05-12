@@ -2,13 +2,14 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TakeQuizComponent } from './take-quiz.component';
 import { Question } from '../question';
 import { QuizQuestionService } from '../quiz-question.service';
+import { Observable } from 'rxjs';
 
 class MockQuestionService {
-  getRandomQuestion() : Question {
+  getRandomQuestion() : Observable<Question> {
     let question = new Question();
     question.question = "Q";
     question.answer = "A";
-    return question;
+    return Observable.create(o => o.next(question));
   }
 }
 

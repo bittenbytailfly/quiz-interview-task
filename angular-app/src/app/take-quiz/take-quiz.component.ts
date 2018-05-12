@@ -25,7 +25,8 @@ export class TakeQuizComponent implements OnInit {
   }
 
   showRandomQuestion() : void {
-    this.question = this._questionService.getRandomQuestion();
+    this._questionService.getRandomQuestion()
+      .subscribe(q => this.question = q);
     this.isAnswerRevealed = false;
   }
 }
