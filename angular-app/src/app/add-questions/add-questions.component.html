@@ -2,14 +2,21 @@
   <form>
     <div class="form-group">
       <label for="question">Question</label>
-      <input type="text" maxlength="255" id="question" class="form-control" placeholder="e.g. What is the capital of Peru?" />
+      <input type="text" name="question" [(ngModel)]="question.question" maxlength="255" id="question" class="form-control" placeholder="e.g. What is the capital of Peru?" />
     </div>
     <div class="form-group">
       <label for="answer">Answer</label>
-      <input type="text" maxlength="255" id="answer" class="form-control" placeholder="e.g. Lima" />
+      <input type="text" name="answer" [(ngModel)]="question.answer" maxlength="255" id="answer" class="form-control" placeholder="e.g. Lima" />
     </div>
     <div class="form-group">
-      <button id="save-question">Save Question</button>
+      <button id="save-question" (click)="addQuestion()" [disabled]="messageVisible">Save Question</button>
     </div>
   </form>
+</div>
+
+{{ question.question }}
+
+<div *ngIf="messageVisible" id="success-message">
+  <strong>Information</strong>
+  <p>{{ message }}</p>
 </div>

@@ -6,6 +6,7 @@ import { AppRoutingModule, routes } from './/app-routing.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AddQuestionsComponent } from './add-questions/add-questions.component';
 import { TakeQuizComponent } from './take-quiz/take-quiz.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -18,6 +19,7 @@ describe('AppComponent', () => {
       ],
       imports: [
         RouterTestingModule.withRoutes(routes),
+        FormsModule
       ]
     }).compileComponents();
   }));
