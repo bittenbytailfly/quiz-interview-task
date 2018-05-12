@@ -22,4 +22,17 @@ describe('AddQuestionsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should clear question and answer fields on saving question', () => {
+    
+  });
+
+  it('should call save question method on service when "save question" button clicked', () => {
+
+  });
+
+  it('should display "Question successfully added" when question saved', () => {
+
+  });
+
 });
