@@ -105,19 +105,43 @@ div.add-questions {
     }
 }
 
-.back-home {
+.back-home, .buttons {
     position: absolute;
     bottom: @grid-gutter-width/2;
+}
+
+.back-home {
     left: @grid-gutter-width/2;
+    background-color: @dark;
+}
+
+.back-home, #next-question-button, #reveal-answer-button {
     padding: @grid-gutter-width/2;
     .border-radius();
-    background-color: @dark;
     color: #fff;
 
     &:hover {
         text-decoration: none;
         color: #fff;
     }
+}
+
+#next-question-button, #reveal-answer-button {
+    background-color: @light;
+    border: 0;
+}
+
+#reveal-answer-button{
+    margin-right: @grid-gutter-width/2;
+    background: rgb(80, 177, 80);
+}
+
+#next-question-button {
+    background: @dark;
+}
+
+.buttons {
+    right: @grid-gutter-width/2;
 }
 
 .take-quiz {
@@ -134,5 +158,32 @@ div.add-questions {
         color: #f00;
         font-size: @menu-button-font-size;
         transition: all 0.1s ease-in-out;
+    }
+
+    .question, .answer {
+        line-height: 1.25em;
+        padding: @grid-gutter-width/2;
+        width: 100%;
+        margin: 0;
+        font-size: 33px;
+        -webkit-box-decoration-break: clone;
+    }
+
+    .question {
+        background: @light;
+    }
+
+    .question, .answer span.show {
+        color: #fff;
+        transition: all 0.2s;
+    }
+
+    .answer {
+        margin-top: @grid-gutter-width / 2;
+        background: @dark;
+
+        span {
+            color: @dark;
+        }
     }
 }
