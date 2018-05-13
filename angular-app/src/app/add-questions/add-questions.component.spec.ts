@@ -3,10 +3,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AddQuestionsComponent } from './add-questions.component';
 import { QuizQuestionService } from '../quiz-question.service';
 import { FormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Question } from '../question';
 
 class MockQuestionService {
-  addQuestion() : Boolean {
-    return true;
+  addQuestion() : Observable<Question> {
+    return Observable.create(o => o.next(new Question()));
   }
 }
 

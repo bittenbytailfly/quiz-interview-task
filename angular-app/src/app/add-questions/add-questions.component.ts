@@ -20,12 +20,14 @@ export class AddQuestionsComponent implements OnInit {
   }
 
   addQuestion(): void {
-    if (this._questionService.addQuestion(this.question)){
-      this.showMessage('Question successfully added');
-      this.question = new Question();
-    } else {
-      this.showMessage('Failed to add question');
-    }
+    this._questionService.addQuestion(this.question)
+      .subscribe(
+        success => {
+          this.showMessage('Question successfully added');
+          this.question = new Question();
+        },
+        error => this.showMessage('Failed to add question')
+      );
   }
 
   showMessage(message: string) {
