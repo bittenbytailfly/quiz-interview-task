@@ -25,12 +25,13 @@ namespace InterviewTask.DataAccess.Repositories
 
         public void AddQuestion(QuizQuestion question)
         {
-            throw new NotImplementedException();
+            this.Context.QuizQuestions
+                .Add(question);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            this.Context.SaveChanges();
         }
 
         public void Dispose()
