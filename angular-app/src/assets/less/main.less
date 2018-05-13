@@ -119,3 +119,20 @@ div.add-questions {
         color: #fff;
     }
 }
+
+.take-quiz {
+    &:extend(.container);
+    padding-top: @grid-gutter-width;
+
+    .no-questions {
+        display: block;
+        height: @menu-button-height;
+        line-height: @menu-button-height;
+        text-align: center;
+        background-color: @light;
+        .border-radius();
+        color: #f00;
+        font-size: @menu-button-font-size;
+        transition: all 0.1s ease-in-out;
+    }
+}

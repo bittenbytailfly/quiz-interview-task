@@ -1,14 +1,18 @@
-<div *ngIf="question;else noQuestions">
-  <p class="question">{{ question.question }}</p>
-  <p class="answer">
-    <span [ngClass]="isAnswerRevealed ? 'show' : ''">{{ question.answer }}</span>
-  </p>
-  <button id="reveal-answer-button" (click)="revealAnswer()">Reveal Answer</button>
-  <button id="next-question-button" (click)="showRandomQuestion()">Next Question</button>
+<div class="take-quiz">
+  <div *ngIf="question;else noQuestions">
+    <p class="question">{{ question.question }}</p>
+    <p class="answer">
+      <span [ngClass]="isAnswerRevealed ? 'show' : ''">{{ question.answer }}</span>
+    </p>
+    <button id="reveal-answer-button" (click)="revealAnswer()">Reveal Answer</button>
+    <button id="next-question-button" (click)="showRandomQuestion()">Next Question</button>
+  </div>
+
+  <ng-template #noQuestions>
+    <div class="no-questions">
+      No questions configured
+    </div>
+  </ng-template>
 </div>
 
-<ng-template #noQuestions>
-  <div class="no-questions">
-    No questions configured
-  </div>
-</ng-template>
+<a class="back-home" routerLink="/">&laquo; Back to Home Page</a>
