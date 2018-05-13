@@ -26,3 +26,9 @@ Due to time constraints, this app has not been tested cross browser and works be
 * Browser optimisation
 * Additional error handling
 * Better use of loading spinners etc.
+
+### Testing
+
+Within the WebAPI project you will find a test project using the Microsoft Testing framework, and withing the Angular Application tests are in their related component folders. If within the root directory on the CLI you can simply type 'ng test' to run them all.
+
+I've used less for the styling (original files within the assets folder), however for installation simplicity I've precompiled it.
