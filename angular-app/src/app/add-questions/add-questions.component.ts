@@ -11,6 +11,7 @@ export class AddQuestionsComponent implements OnInit {
 
   @Input() question : Question;
   messageVisible: boolean;
+  isButtonDisabled : boolean;
   message: string;
 
   constructor(private _questionService : QuizQuestionService) { }
@@ -20,20 +21,25 @@ export class AddQuestionsComponent implements OnInit {
   }
 
   addQuestion(): void {
+    this.isButtonDisabled = true;
     this._questionService.addQuestion(this.question)
       .subscribe(
         success => {
           this.showMessage('Question successfully added');
           this.question = new Question();
+          this.isButtonDisabled = false;
         },
-        error => this.showMessage('Failed to add question')
+        error => {
+          this.showMessage('Failed to add question')
+          this.isButtonDisabled = false;
+        }
       );
   }
 
   showMessage(message: string) {
     this.messageVisible = true;
     this.message = message;
-    setTimeout(() => this.hideMessage(), 5000);
+    setTimeout(() => this.hideMessage(), 3000);
   }
 
   hideMessage(): void {

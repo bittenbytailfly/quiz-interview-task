@@ -9,12 +9,13 @@
       <input type="text" name="answer" [(ngModel)]="question.answer" maxlength="255" id="answer" class="form-control" placeholder="e.g. Lima" />
     </div>
     <div class="form-group">
-      <button id="save-question" (click)="addQuestion()" [disabled]="messageVisible">Save Question</button>
+      <button id="save-question" (click)="addQuestion()" [disabled]="isButtonDisabled">Save Question</button>
     </div>
   </form>
 </div>
 
 <div *ngIf="messageVisible" id="success-message">
-  <strong>Information</strong>
   <p>{{ message }}</p>
 </div>
+
+<a class="back-home" routerLink="/">&laquo; Back to Home Page</a>
