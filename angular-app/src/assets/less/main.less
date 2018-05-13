@@ -1,0 +1,61 @@
+﻿// lessc -x 'src\assets\less\main.less' 'src\styles.css'
+
+@import "bootstrap/bootstrap.less";
+@import "mixins.less";
+
+@dark: #111;
+@light: #666;
+@menu-button-height: 250px;
+@menu-button-font-size: 30px;
+
+body {
+    background: url('assets/images/question-marks.jpg') center center fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: @dark;
+
+    h1 {
+        &:extend(.container);
+        color: #fff;
+        padding: @grid-gutter-width / 2;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+div.home {
+    &:extend(.container);
+    padding-top: @grid-gutter-width;
+
+    nav {
+        .make-row();
+    }
+
+    a {
+        .make-md-column(6);
+        padding: @grid-gutter-width;
+
+        span {
+            display: block;
+            height: @menu-button-height;
+            line-height: @menu-button-height;
+            text-align: center;
+            background-color: @light;
+            .border-radius();
+            color: #fff;
+            font-size: @menu-button-font-size;
+            transition: all 0.1s ease-in-out;
+        }
+
+        span:hover {
+            font-size: @menu-button-font-size*1.2;
+            background-color: lighten(@light, 25%);
+        }
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+}
